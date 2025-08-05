@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CodeFirst_Practice.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telugu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hindi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.English)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Science)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Social)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telugu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hindi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.English)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maths)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Science)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Social)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StuId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StuId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StuId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
